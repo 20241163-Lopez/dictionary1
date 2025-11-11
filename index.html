@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Networking Dictionary</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Networking Dictionary</h1>
+      <p class="lead">Networking Terms and Meanings</p>
+    </header>
+
+    <div class="search-row">
+      <input id="q" type="search" placeholder="Search a Networking term (e.g. IP Address)">
+      <button class="search-btn" id="searchBtn">Search</button>
+    </div>
+    <div class="controls">
+      <button class="btn-ghost" id="randomBtn">Random</button>
+      <button class="btn-ghost" id="clearBtn">Clear</button>
+    </div>
+
+    <section id="result" class="result"></section>
+
+    <div class="side">
+      <div>
+        <strong>History</strong>
+        <ul id="historyList"></ul>
+      </div>
+      <div>
+        <strong>Favorites</strong>
+        <ul id="favList"></ul>
+      </div>
+    </div>
+
+    <footer>Lopez, Balles, Regis, Cloma [GROUP 10]</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
