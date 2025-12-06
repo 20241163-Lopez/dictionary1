@@ -7,30 +7,27 @@ const randomBtn = document.getElementById('randomBtn');
 const clearBtn = document.getElementById('clearBtn');
 const clearHistoryBtn = document.getElementById('clearHistoryBtn');
 
-// Clear History Event
+
 clearHistoryBtn.addEventListener('click', () => {
-  historyList.innerHTML = ''; // Remove all list items
-  localStorage.removeItem('history'); // Optional: clear from storage
+  historyList.innerHTML = ''; 
+  localStorage.removeItem('history'); 
 });
-// Add a new history item
+
 function addHistoryItem(term) {
   const li = document.createElement('li');
   li.textContent = term;
   historyList.appendChild(li);
 
-  // Save to localStorage
   const history = JSON.parse(localStorage.getItem('history') || '[]');
   history.push(term);
   localStorage.setItem('history', JSON.stringify(history));
 }
 
-// Load saved history on page load
 window.addEventListener('load', () => {
   const savedHistory = JSON.parse(localStorage.getItem('history') || '[]');
   savedHistory.forEach(term => addHistoryItem(term));
 });
 
-// Offline Networking term dataset
 const NET_TERMS = {
   "ip address": { def: "A unique numerical label assigned to each device connected to a network.", ex: "Example: 192.168.1.1" },
   "router": { def: "A device that forwards data packets between computer networks.", ex: "Routers connect local networks to the internet." },
